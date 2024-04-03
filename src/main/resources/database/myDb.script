@@ -29,7 +29,7 @@ SET FILES NIO TRUE
 SET FILES NIO SIZE 256
 SET FILES LOG TRUE
 SET FILES LOG SIZE 50
-SET FILES CHECK 1268
+SET FILES CHECK 1354
 SET DATABASE COLLATION "SQL_TEXT" PAD SPACE
 CREATE USER SA PASSWORD DIGEST 'd41d8cd98f00b204e9800998ecf8427e'
 ALTER USER SA SET LOCAL TRUE
@@ -60,4 +60,4 @@ INSERT INTO "flyway_schema_history" VALUES(3,'3','create-table-checkins','SQL','
 INSERT INTO "flyway_schema_history" VALUES(4,'4','create-indexes','SQL','V4__create-indexes.sql',-975704723,'SA','2024-04-02 13:58:46.989594',1,'1')
 INSERT INTO EVENTS VALUES('80028309-a941-4afd-b375-da53ddbbad47','RPG do Herick','Melhores jogadores','rpg-do-herick',250)
 INSERT INTO EVENTS VALUES('97e393e2-bef6-4042-bb66-c52edb85db19','RPG de Sexta','1x ao m\u00eas','rpg-de-sexta',6)
-INSERT INTO ATTENDEES VALUES('97e393e2-bef6-4042-bb66-c52edb85db19', 'Herick Moreira', 'HerickMoreira@email.com', '97e393e2-bef6-4042-bb66-c52edb85db19', CURRENT_TIMESTAMP);
+INSERT INTO ATTENDEES VALUES('97e393e2-bef6-4042-bb66-c52edb85db19','Herick Moreira','HerickMoreira@email.com','97e393e2-bef6-4042-bb66-c52edb85db19',NULL)
