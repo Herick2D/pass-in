@@ -1,5 +1,7 @@
 package com.herick.passin.controllers;
 
+import com.herick.passin.dto.attendee.AttendeeIdDTO;
+import com.herick.passin.dto.attendee.AttendeeRequestDTO;
 import com.herick.passin.dto.attendee.AttendeesListResponseDTO;
 import com.herick.passin.dto.event.EventIdDTO;
 import com.herick.passin.dto.event.EventRequestDTO;
@@ -30,6 +32,15 @@ public class EventController {
     var uri = uriComponentsBuilder.path("/events/{id}").buildAndExpand(eventIdDTO.eventId()).toUri();
 
     return ResponseEntity.created(uri).body(eventIdDTO);
+  }
+
+  @PostMapping("/{eventId}/attendees")
+  public ResponseEntity<AttendeeIdDTO> registerParticipant(@PathVariable String eventId, @RequestBody AttendeeRequestDTO body, UriComponentsBuilder uriComponentsBuilder) {
+    AttendeeIdDTO attendeeIdDTO = this.eventService.registerAttendeeOnEvent(eventId, body);
+
+    var uri = uriComponentsBuilder.path("/attendees/{attendId}/badge").buildAndExpand(attendeeIdDTO.attendeeId()).toUri();
+
+    return ResponseEntity.created(uri).body(attendeeIdDTO);
   }
 
   @GetMapping("/attendees/{id}")
